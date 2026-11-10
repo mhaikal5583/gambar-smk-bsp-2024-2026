@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang Jualan Gambar SMK BSP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header Navigation Bar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-200">
+                        <i class="fa-solid fa-camera-retro text-lg"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <h1 class="font-bold text-slate-900 text-lg tracking-tight">Borang Jualan Gambar SMK BSP</h1>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 font-semibold px-2.5 py-0.5 rounded-full border border-indigo-100">Sesi 2024 – 2026</span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-medium">Bandar Seri Putra • Khidmat Fotografi Sekolah</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <button onclick="switchTab('troli')" class="flex items-center space-x-2 px-4 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 font-medium text-sm transition-all shadow-sm">
+                        <i class="fa-solid fa-cart-shopping text-indigo-600"></i>
+                        <span>Troli Tempahan</span>
+                        <span id="cart-badge" class="ml-1 bg-indigo-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                    </button>
+                    <a href="https://wa.me/60199094717" target="_blank" class="hidden sm:flex items-center space-x-2 px-4 py-2 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-medium text-sm transition-all border border-emerald-200">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+                        <span>Muhd Ilyas / 019 909 4717</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex space-x-6 overflow-x-auto py-3 no-scrollbar">
+                    <button onclick="switchTab('dashboard')" id="nav-dashboard" class="tab-btn flex items-center space-x-2 text-sm font-semibold pb-1 border-b-2 border-indigo-600 text-indigo-600 transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Ringkasan Dashboard</span>
+                    </button>
+                    <button onclick="switchTab('troli')" id="nav-troli" class="tab-btn flex items-center space-x-2 text-sm font-medium pb-1 border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <span>Borang Tempahan & Troli</span>
+                    </button>
+                    <button onclick="switchTab('galeri')" id="nav-galeri" class="tab-btn flex items-center space-x-2 text-sm font-medium pb-1 border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-folder-open text-amber-500"></i>
+                        <span>Galeri Foto Drive</span>
+                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold">7</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+        <!-- TAB 1: DASHBOARD -->
+        <div id="tab-dashboard" class="tab-content active space-y-6">
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sesi Persekolahan</p>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">2024 – 2026</h3>
+                        <p class="text-xs text-emerald-600 font-semibold mt-1"><i class="fa-solid fa-circle-check"></i> 3 Sesi Berturut</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Folder Galeri Rasmi</p>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">7 Folder</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kelas & Organisasi</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-folder"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pilihan Saiz & Harga</p>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">RM 3.00 – RM 10.00</h3>
+                        <p class="text-xs text-slate-500 mt-1">Saiz: 4R, 6RW, 8RW</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Kadar Kos Penghantaran</p>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">4 Pilihan</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kawasan A & B + Serahan Percuma</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notice Banner -->
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start space-x-4">
+                <div class="text-amber-600 text-xl mt-0.5"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-amber-900 text-sm">SILA BACA SETIAP BAHAGIAN DENGAN TELITI SEBELUM MEMBUAT PEMBAYARAN / PEMBELIAN</h4>
+                    <p class="text-xs text-amber-700 mt-1 leading-relaxed">
+                        Borang ini adalah jualan gambar dari tahun 2024 sehingga 2026. Setiap pembelian akan dihantar terus ke alamat rumah yang diberikan. Tiada kutipan tunai atau serahan gambar bercetak secara bersemuka di sekolah sebaik sahaja anda mengisi borang ini. Guru yang masih bertugas adalah berkecuali (gambar boleh dihantar ke sekolah sebaik siap dicetak). Harga jualan adalah harga diskaun khas.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-3 text-xs font-semibold">
+                        <span class="bg-white px-3 py-1.5 rounded-lg border border-amber-200 text-amber-800 shadow-sm">Kawasan A (BSP, Bukit Mahkota, Bangi Avenue): RM 4.00</span>
+                        <span class="bg-white px-3 py-1.5 rounded-lg border border-amber-200 text-amber-800 shadow-sm">Kawasan B (Luar BSP / Kajang): RM 10.00</span>
+                        <span class="bg-white px-3 py-1.5 rounded-lg border border-amber-200 text-amber-800 shadow-sm">Ambil Sendiri (Studio BSP): Percuma</span>
+                        <span class="bg-white px-3 py-1.5 rounded-lg border border-amber-200 text-amber-800 shadow-sm">Guru Bertugas di Sekolah: Percuma</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid Dashboard -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left: Price List Overview -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                            <i class="fa-solid fa-box-open text-indigo-600"></i>
+                            <span>Pakej Saiz & Harga Foto</span>
+                        </h3>
+                        <span class="text-xs text-slate-400 font-semibold">Harga Diskaun</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-sm">4R</span>
+                                    <span class="text-xs font-medium text-slate-600">4R Sekeping</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">Saiz standard album foto pelajar</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-indigo-600 text-sm">RM 3.00</span>
+                                <p class="text-[10px] text-slate-400">/ keping</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-sm">6RW</span>
+                                    <span class="text-xs font-medium text-slate-600">6RW Sekeping</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">Saiz sederhana sesuai untuk bingkai meja</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-indigo-600 text-sm">RM 6.00</span>
+                                <p class="text-[10px] text-slate-400">/ keping</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-sm">8RW</span>
+                                    <span class="text-xs font-medium text-slate-600">8RW Sekeping</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">Saiz besar berkualiti tinggi untuk bingkai dinding</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-indigo-600 text-sm">RM 10.00</span>
+                                <p class="text-[10px] text-slate-400">/ keping</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex items-center justify-between text-xs font-semibold text-slate-600">
+                        <span>Tema: Formal, Freestyle, Props</span>
+                        <button onclick="switchTab('troli')" class="text-indigo-600 hover:underline">Buka Borang Tempahan &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Right: Quick Google Drive Folders Summary -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                            <i class="fa-solid fa-folder-tree text-amber-500"></i>
+                            <span>Rujukan Foto Google Drive (Bahagian B)</span>
+                        </h3>
+                        <button onclick="switchTab('galeri')" class="text-xs font-semibold text-indigo-600 hover:underline">Lihat Semua</button>
+                    </div>
+                    <p class="text-xs text-slate-500">Sila rujuk pautan Google Drive berikut sebelum memilih kod gambar.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-xs">Main Folder</h4>
+                                <span class="text-[11px] text-slate-400">Google Drive</span>
+                            </div>
+                            <a href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-indigo-600 hover:bg-indigo-50 transition-all shadow-sm">Buka <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                        </div>
+
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-xs">Kelas 2024</h4>
+                                <span class="text-[11px] text-slate-400">Google Drive</span>
+                            </div>
+                            <a href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-indigo-600 hover:bg-indigo-50 transition-all shadow-sm">Buka <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                        </div>
+
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-xs">Organisasi 2024</h4>
+                                <span class="text-[11px] text-slate-400">Google Drive</span>
+                            </div>
+                            <a href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-indigo-600 hover:bg-indigo-50 transition-all shadow-sm">Buka <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                        </div>
+
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-xs">Kelas 2025</h4>
+                                <span class="text-[11px] text-slate-400">Google Drive</span>
+                            </div>
+                            <a href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-indigo-600 hover:bg-indigo-50 transition-all shadow-sm">Buka <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center space-x-3 text-xs text-slate-600">
+                        <i class="fa-solid fa-circle-info text-indigo-600 text-sm"></i>
+                        <span><strong>Kod Rujukan:</strong> K = Kelas, BO = Badan Organisasi &nbsp;|&nbsp; K24, B024, K25, B025...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer studio & help info -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-store text-base"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs">PUSAT TUNTUTAN SENDIRI (PICKUP STUDIO)</h4>
+                        <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Digital Imaging Studio Bandar Seri Putra. Hadir selepas menerima mesej pemberitahuan gambar sudah siap dituntut. Gambar tidak dituntut selepas 3 bulan akan dilupuskan mengikut syarat.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-headset text-base"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs">PERTANYAAN & BANTUAN JURUJUAL</h4>
+                        <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Hubungi jurujual rasmi <strong>Muhd Ilyas / 019 909 4717</strong> untuk sebarang pertanyaan mengenai gambar atau bayaran.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: BORANG TEMPAHAN & TROLI -->
+        <div id="tab-troli" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                <!-- Left Form Section (8 Cols) -->
+                <div class="lg:col-span-8 space-y-6">
+                    
+                    <!-- BAHAGIAN A: Maklumat Pembeli -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+                                <i class="fa-solid fa-user text-indigo-600"></i>
+                                <span>BAHAGIAN A: Maklumat Pembeli</span>
+                            </h3>
+                            <span class="text-xs text-slate-400 font-medium">Maklumat Pelanggan</span>
+                        </div>
+
+                        <!-- Kategori Pembeli -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Kategori Pembeli</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="setKategoriPembeli('Pelajar')" id="btn-kategori-pelajar" class="py-2.5 px-4 rounded-xl border border-indigo-600 bg-indigo-600 text-white font-semibold text-xs transition-all shadow-sm">Pelajar</button>
+                                <button type="button" onclick="setKategoriPembeli('Penjaga')" id="btn-kategori-penjaga" class="py-2.5 px-4 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all">Penjaga</button>
+                                <button type="button" onclick="setKategoriPembeli('Guru')" id="btn-kategori-guru" class="py-2.5 px-4 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all">Guru</button>
+                            </div>
+                        </div>
+
+                        <!-- Nama Penuh Pelajar / Pembeli -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Nama Penuh Pelajar</label>
+                            <input type="text" id="input-nama" placeholder="Contoh: Muhammad Harith bin Fauzi" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-medium text-slate-800 placeholder:text-slate-400">
+                        </div>
+
+                        <!-- Phone & Email -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-700">Nombor Telefon WhatsApp</label>
+                                <input type="text" id="input-phone" placeholder="01X-XXXXXXX" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-medium text-slate-800 placeholder:text-slate-400">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-700">Alamat Email (Untuk Salinan Resit)</label>
+                                <input type="email" id="input-email" placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-medium text-slate-800 placeholder:text-slate-400">
+                            </div>
+                        </div>
+
+                        <!-- Alamat Rumah -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Alamat Penuh Penghantaran Rumah</label>
+                            <textarea id="input-alamat" rows="2" placeholder="No rumah, nama jalan, seksyen/taman, poskod..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-medium text-slate-800 placeholder:text-slate-400"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- BAHAGIAN C: Pilihan & Spesifikasi Gambar -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+                                <i class="fa-solid fa-images text-indigo-600"></i>
+                                <span>BAHAGIAN C: Pilihan & Spesifikasi Gambar</span>
+                            </h3>
+                            <span class="text-xs text-indigo-600 font-semibold">Troli Interaktif</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Tahun Sesi Persekolahan -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-700">Tahun Sesi Persekolahan</label>
+                                <select id="select-tahun" onchange="updateFormSesi()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-semibold text-slate-800 bg-white">
+                                    <option value="2024">Tahun 2024 (K24 / BO24)</option>
+                                    <option value="2025">Tahun 2025 (K25 / BO25)</option>
+                                    <option value="2026">Tahun 2026 (K26 / BO26)</option>
+                                </select>
+                            </div>
+
+                            <!-- Kategori Gambar -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-700">Kategori Gambar</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button type="button" onclick="setKategoriGambar('Kelas')" id="btn-kat-kelas" class="py-2.5 px-3 rounded-xl border border-indigo-600 bg-indigo-600 text-white font-semibold text-xs transition-all shadow-sm">Kelas (K)</button>
+                                    <button type="button" onclick="setKategoriGambar('Organisasi')" id="btn-kat-org" class="py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all">Organisasi (BO)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Spesifikasi Kelas/Organisasi -->
+                        <div id="spesifikasi-container" class="p-4 rounded-xl border border-slate-100 bg-slate-50 space-y-4">
+                            <h4 id="spesifikasi-title" class="font-bold text-slate-800 text-xs">Spesifikasi Gambar Kelas (2024)</h4>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="kelas-fields">
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-bold text-slate-700">Tingkatan</label>
+                                    <select id="select-tingkatan" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-semibold text-slate-800 bg-white">
+                                        <option>Tingkatan 1</option>
+                                        <option>Tingkatan 2</option>
+                                        <option>Tingkatan 3</option>
+                                        <option>Tingkatan 4</option>
+                                        <option>Tingkatan 5</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-bold text-slate-700">Nama Kelas</label>
+                                    <select id="select-namakelas" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-semibold text-slate-800 bg-white">
+                                        <option>Pluto</option>
+                                        <option>Saturn</option>
+                                        <option>Mars</option>
+                                        <option>Venus</option>
+                                        <option>Jupiter</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-normal text-slate-500">Jika kelas tiada dalam senarai di atas, tulis secara manual:</label>
+                                <input type="text" id="input-manual-kelas" placeholder="Contoh: 2 Pluto / Pendidikan Khas..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-medium text-slate-800 placeholder:text-slate-400 bg-white">
+                            </div>
+
+                            <!-- Style / Tema Foto -->
+                            <div class="space-y-1.5 pt-2">
+                                <label class="text-xs font-bold text-slate-700">Style / Tema Foto</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button type="button" onclick="setTemaFoto('Formal')" id="btn-tema-formal" class="py-2.5 px-3 rounded-xl border border-slate-900 bg-slate-900 text-white font-semibold text-xs transition-all shadow-sm">Formal</button>
+                                    <button type="button" onclick="setTemaFoto('Freestyle')" id="btn-tema-freestyle" class="py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all">Freestyle</button>
+                                    <button type="button" onclick="setTemaFoto('Props')" id="btn-tema-props" class="py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all">Props</button>
+                                </div>
+                            </div>
+
+                            <!-- Pilihan Saiz & Harga Sekeping -->
+                            <div class="space-y-1.5 pt-2">
+                                <label class="text-xs font-bold text-slate-700">Pilihan Saiz & Harga Sekeping</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <button type="button" onclick="setSaizFoto('4R', 3.00)" id="btn-saiz-4r" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/50 text-left transition-all">
+                                        <div class="flex justify-between items-center">
+                                            <span class="font-bold text-slate-900 text-xs">4R Sekeping</span>
+                                        </div>
+                                        <span class="font-bold text-indigo-600 text-sm mt-1 block">RM 3.00</span>
+                                    </button>
+
+                                    <button type="button" onclick="setSaizFoto('6RW', 6.00)" id="btn-saiz-6rw" class="p-3 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-300">
+                                        <div class="flex justify-between items-center">
+                                            <span class="font-bold text-slate-900 text-xs">6RW Sekeping</span>
+                                        </div>
+                                        <span class="font-bold text-indigo-600 text-sm mt-1 block">RM 6.00</span>
+                                    </button>
+
+                                    <button type="button" onclick="setSaizFoto('8RW', 10.00)" id="btn-saiz-8rw" class="p-3 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-300">
+                                        <div class="flex justify-between items-center">
+                                            <span class="font-bold text-slate-900 text-xs">8RW Sekeping</span>
+                                        </div>
+                                        <span class="font-bold text-indigo-600 text-sm mt-1 block">RM 10.00</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Kuantiti & Add to Cart -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-bold text-slate-700">Kuantiti</label>
+                                    <input type="number" id="input-kuantiti" value="1" min="1" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-600 text-xs font-bold text-slate-800 bg-white">
+                                </div>
+                                <div class="sm:col-span-2 flex items-end">
+                                    <button type="button" onclick="tambahKeTroli()" class="w-full py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-200 transition-all flex items-center justify-center space-x-2">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                        <span>+ Tambah ke Troli</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Cart & Summary Section (4 Cols) -->
+                <div class="lg:col-span-4 space-y-6">
+                    
+                    <!-- Troli Pembelian Box -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 sticky top-28">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+                                <i class="fa-solid fa-basket-shopping text-indigo-600"></i>
+                                <span id="cart-title">Troli Pembelian (0 item)</span>
+                            </h3>
+                        </div>
+
+                        <!-- Cart Items Container -->
+                        <div id="cart-items-container" class="space-y-3 max-h-60 overflow-y-auto pr-1">
+                            <!-- Empty Cart Placeholder -->
+                            <div id="empty-cart-msg" class="text-center py-8 text-slate-400 space-y-2">
+                                <i class="fa-solid fa-cart-arrow-down text-3xl"></i>
+                                <p class="text-xs font-medium">Troli anda masih kosong.<br>Sila pilih gambar dan tekan "+ Tambah ke Troli".</p>
+                            </div>
+                        </div>
+
+                        <!-- Pilihan Kaedah & Kawasan Pos -->
+                        <div class="space-y-2 pt-2 border-t border-slate-100">
+                            <div class="flex items-center justify-between">
+                                <label class="text-xs font-bold text-slate-700">Pilihan Kaedah & Kawasan Pos</label>
+                                <i class="fa-solid fa-truck text-xs text-slate-400"></i>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label onclick="selectPosCard(this, 'Kawasan A (Sekitar BSP)', 4.00)" id="pos-card-1" class="p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="pos" id="radio-pos-1" checked class="text-indigo-600 focus:ring-indigo-500">
+                                        <div>
+                                            <span class="font-bold text-slate-900 text-xs block">Kawasan A (Sekitar BSP)</span>
+                                            <span class="text-[10px] text-slate-500 block leading-tight mt-0.5">Bandar Seri Putra, Bukit Mahkota, Bangi Avenue, Alam Sari, Pekan Bangi, Bandar Puteri, Southville City</span>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-indigo-600 text-xs whitespace-nowrap">RM 4.00</span>
+                                </label>
+
+                                <label onclick="selectPosCard(this, 'Kawasan B (Luar BSP)', 10.00)" id="pos-card-2" class="p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="pos" id="radio-pos-2" class="text-indigo-600 focus:ring-indigo-500">
+                                        <div>
+                                            <span class="font-bold text-slate-900 text-xs block">Kawasan B (Luar Kawasan BSP / Kajang)</span>
+                                            <span class="text-[10px] text-slate-500 block leading-tight mt-0.5">Luar dari kawasan Bandar Seri Putra, Kajang</span>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-indigo-600 text-xs whitespace-nowrap">RM 10.00</span>
+                                </label>
+
+                                <label onclick="selectPosCard(this, 'Ambil Sendiri', 0.00)" id="pos-card-3" class="p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="pos" id="radio-pos-3" class="text-indigo-600 focus:ring-indigo-500">
+                                        <div>
+                                            <span class="font-bold text-slate-900 text-xs block">Ambil Sendiri (Self-Pickup Studio)</span>
+                                            <span class="text-[10px] text-slate-500 block leading-tight mt-0.5">Digital Imaging Studio Bandar Seri Putra (Tuntut dalam masa 3 bulan selepas terima mesej)</span>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-emerald-600 text-xs whitespace-nowrap">Percuma</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Calculation Summary -->
+                        <div class="space-y-1.5 pt-2 border-t border-slate-100 text-xs">
+                            <div class="flex justify-between text-slate-600">
+                                <span>Jumlah Subtotal Foto</span>
+                                <span id="summary-subtotal" class="font-semibold text-slate-800">RM 0.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-600">
+                                <span id="summary-pos-label">Kos Penghantaran (Kawasan A (Sekitar BSP))</span>
+                                <span id="summary-pos-price" class="font-semibold text-slate-800">RM 4.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-900 font-bold text-sm pt-2 border-t border-slate-100">
+                                <span>JUMLAH KESELURUHAN</span>
+                                <span id="summary-total" class="text-indigo-600">RM 4.00</span>
+                            </div>
+                        </div>
+
+                        <!-- BAHAGIAN D: Cara Pembayaran -->
+                        <div class="space-y-2 pt-2 border-t border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-xs flex items-center space-x-2">
+                                <i class="fa-solid fa-credit-card text-indigo-600"></i>
+                                <span>BAHAGIAN D: Cara Pembayaran</span>
+                            </h4>
+                            <p class="text-[11px] text-slate-500">Bayaran secara atas talian atau QR Pay sahaja (Tiada COD).</p>
+                            
+                            <!-- Interactive Payment Selection Options -->
+                            <div class="space-y-2 pt-1">
+                                <label onclick="selectPayCard(this, 'Maybank QR / Transfer', 'Maybank', 'MUHD ILYAS', 'Maybank / QR Pay')" id="pay-card-1" class="p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="payment_method" id="radio-pay-1" checked class="text-indigo-600 focus:ring-indigo-500">
+                                        <div>
+                                            <span class="font-bold text-slate-900 text-xs block">Maybank (DuitNow / QR Pay)</span>
+                                            <span class="text-[10px] text-slate-500 block leading-tight">Akaun: MUHD ILYAS</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[10px] bg-indigo-50 text-indigo-700 font-semibold px-2 py-1 rounded">Pilihan Utama</span>
+                                </label>
+
+                                <label onclick="selectPayCard(this, 'Bank Islam Transfer', 'Bank Islam', 'MUHD ILYAS', 'Bank Islam')" id="pay-card-2" class="p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="payment_method" id="radio-pay-2" class="text-indigo-600 focus:ring-indigo-500">
+                                        <div>
+                                            <span class="font-bold text-slate-900 text-xs block">Bank Islam</span>
+                                            <span class="text-[10px] text-slate-500 block leading-tight">Akaun: MUHD ILYAS</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2 py-1 rounded">Online Transfer</span>
+                                </label>
+
+                                <label onclick="selectPayCard(this, 'Touch \'n Go eWallet', 'TNG eWallet', 'MUHD ILYAS', 'Touch \'n Go QR')" id="pay-card-3" class="p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="payment_method" id="radio-pay-3" class="text-indigo-600 focus:ring-indigo-500">
+                                        <div>
+                                            <span class="font-bold text-slate-900 text-xs block">Touch 'n Go eWallet</span>
+                                            <span class="text-[10px] text-slate-500 block leading-tight">QR DuitNow / TNG</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[10px] bg-emerald-50 text-emerald-700 font-semibold px-2 py-1 rounded">E-Wallet</span>
+                                </label>
+                            </div>
+
+                            <!-- Selected Payment Info Display Box -->
+                            <div id="payment-details-box" class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
+                                <p class="text-slate-700"><strong>Nama Bank:</strong> <span id="pay-bank">Maybank</span></p>
+                                <p class="text-slate-700"><strong>Nama Akaun:</strong> <span id="pay-account">MUHD ILYAS</span></p>
+                                <p class="text-slate-700"><strong>Pilihan QR:</strong> <span id="pay-method-desc">Maybank / QR Pay</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" onclick="submitTempahan()" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-200 transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-check"></i>
+                            <span>HANTAR TEMPAHAN (SUBMIT KE SHEET)</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB 3: GALERI FOTO DRIVE -->
+        <div id="tab-galeri" class="tab-content space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                        <i class="fa-solid fa-folder-open text-amber-500"></i>
+                        <span>Rujukan Galeri Foto Google Drive (Tahun 2024 – 2026)</span>
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Pautan rasmi arkib gambar kelas dan badan organisasi SMK Bandar Seri Putra.</p>
+                </div>
+                <span class="text-xs bg-indigo-50 text-indigo-700 font-semibold px-3 py-1.5 rounded-xl border border-indigo-100">7 Folder Dikesan</span>
+            </div>
+
+            <!-- Grid Folders -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Utama</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Main Folder</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Sesi 2024</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Kelas 2024</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Sesi 2024</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Organisasi 2024</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Sesi 2025</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Kelas 2025</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Sesi 2025</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Organisasi 2025</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Sesi 2026</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Kelas 2026</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional row for Organisasi 2026 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-folder"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-lg">Sesi 2026</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Organisasi 2026</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mengandungi folder resolusi penuh untuk semakan ibu bapa, pelajar, dan guru.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Google Drive URL</span>
+                        <a href="#" target="_blank" class="font-bold text-indigo-600 hover:underline flex items-center space-x-1"><span>Buka Galeri</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm text-xs text-slate-600 space-y-2">
+                <p class="font-bold text-slate-900">Peringatan Kod Rujukan Gambar (Sila Peka):</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div>• K24 = Kelas Sesi 2024 | BO24 = Badan Organisasi Sesi 2024</div>
+                    <div>• K25 = Kelas Sesi 2025 | BO25 = Badan Organisasi Sesi 2025</div>
+                    <div>• K26 = Kelas Sesi 2026 | BO26 = Badan Organisasi Sesi 2026</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+            &copy; 2024 – 2026 Borang Jualan Gambar SMK Bandar Seri Putra. Hak Cipta Terpelihara.
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        // State Management
+        let state = {
+            kategoriPembeli: 'Pelajar',
+            kategoriGambar: 'Kelas',
+            tahunSesi: '2024',
+            temaFoto: 'Formal',
+            selectedSaiz: '4R',
+            hargaSaiz: 3.00,
+            kosPos: 4.00,
+            namaPos: 'Kawasan A (Sekitar BSP)',
+            selectedPayment: 'Maybank QR / Transfer',
+            cart: []
+        };
+
+        // Initialize default checked state on load
+        window.addEventListener('DOMContentLoaded', () => {
+            selectPosCard(document.getElementById('pos-card-1'), 'Kawasan A (Sekitar BSP)', 4.00);
+            selectPayCard(document.getElementById('pay-card-1'), 'Maybank QR / Transfer', 'Maybank', 'MUHD ILYAS', 'Maybank / QR Pay');
+        });
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('border-indigo-600', 'text-indigo-600');
+                el.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            document.getElementById('tab-' + tabId).classList.add('active');
+            const btn = document.getElementById('nav-' + tabId);
+            if(btn) {
+                btn.classList.remove('border-transparent', 'text-slate-500');
+                btn.classList.add('border-indigo-600', 'text-indigo-600');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setKategoriPembeli(kat) {
+            state.kategoriPembeli = kat;
+            ['Pelajar', 'Penjaga', 'Guru'].forEach(k => {
+                const el = document.getElementById('btn-kategori-' + k.toLowerCase());
+                if(el) {
+                    if(k === kat) {
+                        el.className = "py-2.5 px-4 rounded-xl border border-indigo-600 bg-indigo-600 text-white font-semibold text-xs transition-all shadow-sm";
+                    } else {
+                        el.className = "py-2.5 px-4 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all";
+                    }
+                }
+            });
+        }
+
+        function setKategoriGambar(kat) {
+            state.kategoriGambar = kat;
+            const btnKelas = document.getElementById('btn-kat-kelas');
+            const btnOrg = document.getElementById('btn-kat-org');
+            const specTitle = document.getElementById('spesifikasi-title');
+            const kelasFields = document.getElementById('kelas-fields');
+
+            if(kat === 'Kelas') {
+                btnKelas.className = "py-2.5 px-3 rounded-xl border border-indigo-600 bg-indigo-600 text-white font-semibold text-xs transition-all shadow-sm";
+                btnOrg.className = "py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all";
+                specTitle.innerText = `Spesifikasi Gambar Kelas (${state.tahunSesi})`;
+                kelasFields.style.display = 'grid';
+            } else {
+                btnOrg.className = "py-2.5 px-3 rounded-xl border border-indigo-600 bg-indigo-600 text-white font-semibold text-xs transition-all shadow-sm";
+                btnKelas.className = "py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all";
+                specTitle.innerText = `Spesifikasi Badan Organisasi (${state.tahunSesi})`;
+                kelasFields.style.display = 'none';
+            }
+        }
+
+        function updateFormSesi() {
+            state.tahunSesi = document.getElementById('select-tahun').value;
+            setKategoriGambar(state.kategoriGambar);
+        }
+
+        function setTemaFoto(tema) {
+            state.temaFoto = tema;
+            ['Formal', 'Freestyle', 'Props'].forEach(t => {
+                const el = document.getElementById('btn-tema-' + t.toLowerCase());
+                if(el) {
+                    if(t === tema) {
+                        el.className = "py-2.5 px-3 rounded-xl border border-slate-900 bg-slate-900 text-white font-semibold text-xs transition-all shadow-sm";
+                    } else {
+                        el.className = "py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition-all";
+                    }
+                }
+            });
+        }
+
+        function setSaizFoto(saiz, harga) {
+            state.selectedSaiz = saiz;
+            state.hargaSaiz = harga;
+            ['4R', '6RW', '8RW'].forEach(s => {
+                const el = document.getElementById('btn-saiz-' + s.toLowerCase());
+                if(el) {
+                    if(s === saiz) {
+                        el.className = "p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/50 text-left transition-all";
+                    } else {
+                        el.className = "p-3 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-300";
+                    }
+                }
+            });
+        }
+
+        function selectPosCard(cardEl, nama, harga) {
+            for(let i = 1; i <= 3; i++) {
+                const c = document.getElementById('pos-card-' + i);
+                const r = document.getElementById('radio-pos-' + i);
+                if(c) {
+                    c.className = "p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300";
+                }
+                if(r) r.checked = false;
+            }
+            cardEl.className = "p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300";
+            const radioId = cardEl.id.replace('pos-card-', 'radio-pos-');
+            const activeRadio = document.getElementById(radioId);
+            if(activeRadio) activeRadio.checked = true;
+
+            state.namaPos = nama;
+            state.kosPos = harga;
+            document.getElementById('summary-pos-label').innerText = `Kos Penghantaran (${nama})`;
+            document.getElementById('summary-pos-price').innerText = `RM ${harga.toFixed(2)}`;
+            updateCartSummary();
+        }
+
+        function selectPayCard(cardEl, paymentName, bank, account, qrDesc) {
+            for(let i = 1; i <= 3; i++) {
+                const c = document.getElementById('pay-card-' + i);
+                const r = document.getElementById('radio-pay-' + i);
+                if(c) {
+                    c.className = "p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300";
+                }
+                if(r) r.checked = false;
+            }
+            cardEl.className = "p-3 rounded-xl border border-slate-200 bg-white flex items-center justify-between cursor-pointer transition-all hover:border-slate-300";
+            const radioId = cardEl.id.replace('pay-card-', 'radio-pay-');
+            const activeRadio = document.getElementById(radioId);
+            if(activeRadio) activeRadio.checked = true;
+
+            state.selectedPayment = paymentName;
+            document.getElementById('pay-bank').innerText = bank;
+            document.getElementById('pay-account').innerText = account;
+            document.getElementById('pay-method-desc').innerText = qrDesc;
+        }
+
+        function tambahKeTroli() {
+            const kuantiti = parseInt(document.getElementById('input-kuantiti').value) || 1;
+            let detail = `${state.kategoriGambar} (${state.tahunSesi}) - Tema ${state.temaFoto} - Saiz ${state.selectedSaiz}`;
+            if(state.kategoriGambar === 'Kelas') {
+                const ting = document.getElementById('select-tingkatan').value;
+                const kelas = document.getElementById('select-namakelas').value;
+                const manual = document.getElementById('input-manual-kelas').value.trim();
+                const namaKelasFinal = manual !== '' ? manual : `${ting} ${kelas}`;
+                detail = `Kelas ${namaKelasFinal} (${state.tahunSesi}) - Tema ${state.temaFoto} - Saiz ${state.selectedSaiz}`;
+            }
+
+            state.cart.push({
+                detail: detail,
+                kuantiti: kuantiti,
+                harga: state.hargaSaiz,
+                total: state.hargaSaiz * kuantiti
+            });
+
+            renderCart();
+            switchTab('troli');
+        }
+
+        function padamItem(index) {
+            state.cart.splice(index, 1);
+            renderCart();
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const badge = document.getElementById('cart-badge');
+            const cartTitle = document.getElementById('cart-title');
+
+            badge.innerText = state.cart.length;
+            cartTitle.innerText = `Troli Pembelian (${state.cart.length} item)`;
+
+            if(state.cart.length === 0) {
+                container.innerHTML = `
+                    <div id="empty-cart-msg" class="text-center py-8 text-slate-400 space-y-2">
+                        <i class="fa-solid fa-cart-arrow-down text-3xl"></i>
+                        <p class="text-xs font-medium">Troli anda masih kosong.<br>Sila pilih gambar dan tekan "+ Tambah ke Troli".</p>
+                    </div>
+                `;
+            } else {
+                let html = '';
+                state.cart.forEach((item, idx) => {
+                    html += `
+                        <div class="p-3 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between text-xs">
+                            <div>
+                                <p class="font-bold text-slate-900">${item.detail}</p>
+                                <p class="text-slate-500 mt-0.5">${item.kuantiti} x RM ${item.harga.toFixed(2)} = <strong>RM ${item.total.toFixed(2)}</strong></p>
+                            </div>
+                            <button onclick="padamItem(${idx})" class="text-rose-500 hover:text-rose-700 p-1.5"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            }
+            updateCartSummary();
+        }
+
+        function updateCartSummary() {
+            let subtotal = 0;
+            state.cart.forEach(item => {
+                subtotal += item.total;
+            });
+            const grandTotal = subtotal + state.kosPos;
+
+            document.getElementById('summary-subtotal').innerText = `RM ${subtotal.toFixed(2)}`;
+            document.getElementById('summary-total').innerText = `RM ${grandTotal.toFixed(2)}`;
+        }
+
+        // Fungsi menghantar data ke Google Sheet melalui Web App
+        function submitTempahan() {
+            const nama = document.getElementById('input-nama').value.trim();
+            const phone = document.getElementById('input-phone').value.trim();
+            const email = document.getElementById('input-email').value.trim();
+            const alamat = document.getElementById('input-alamat').value.trim();
+
+            if(!nama || !phone || !alamat) {
+                alert('Sila lengkapkan Nama Penuh, No WhatsApp dan Alamat Penghantaran di Bahagian A.');
+                switchTab('troli');
+                return;
+            }
+            if(state.cart.length === 0) {
+                alert('Troli anda masih kosong. Sila masukkan sekurang-kurangnya satu pilihan gambar.');
+                return;
+            }
+
+            let subtotal = 0;
+            let detailsList = [];
+            state.cart.forEach(item => {
+                subtotal += item.total;
+                detailsList.push(`${item.detail} (${item.kuantiti}x)`);
+            });
+            const grandTotal = subtotal + state.kosPos;
+
+            const payload = {
+                kategoriPembeli: state.kategoriPembeli,
+                nama: nama,
+                phone: phone,
+                email: email,
+                alamat: alamat,
+                tahunSesi: state.tahunSesi,
+                kategoriGambar: state.kategoriGambar,
+                spesifikasi: detailsList.join(' | '),
+                temaFoto: state.temaFoto,
+                selectedSaiz: state.selectedSaiz,
+                kuantiti: state.cart.reduce((acc, curr) => acc + curr.kuantiti, 0),
+                namaPos: state.namaPos,
+                kosPos: state.kosPos,
+                subtotal: subtotal,
+                grandTotal: grandTotal,
+                selectedPayment: state.selectedPayment
+            };
+
+            // Gantikan dengan URL Web App Apps Script anda
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwI7udkT3Tvs6J_b_HgL_MMc6XT5q1Q72BMsBs3wiAbaRPXQCjBoIeWyT08zJx5V3ukXw/exec';
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                alert(`Tempahan berjaya dihantar menggunakan kaedah pembayaran ${state.selectedPayment}! Terima kasih atas pembelian anda.`);
+                state.cart = [];
+                renderCallDefault();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Gagal menghantar tempahan. Sila cuba lagi.');
+            });
+        }
+
+        function renderCallDefault() {
+            renderCart();
+            document.getElementById('input-nama').value = '';
+            document.getElementById('input-phone').value = '';
+            document.getElementById('input-email').value = '';
+            document.getElementById('input-alamat').value = '';
+            document.getElementById('input-manual-kelas').value = '';
+            document.getElementById('input-kuantiti').value = '1';
+        }
+    </script>
+</body>
+</html>
